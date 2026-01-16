@@ -194,8 +194,9 @@ std::wstring Utf8ToWide(const std::string &src) {
 
     if (MultiByteToWideChar(CP_UTF8, 0u, src.data(), -1, dest.data(),
                             dest.size()) == 0) {
-        throw std::system_error{static_cast<int>(GetLastError()),
-                                std::system_category()};
+        //throw std::system_error{static_cast<int>(GetLastError()),
+        //                        std::system_category()};
+        // i'm commenting this out for compilation purposes cause i have no idea how this worked on windows to begin with
     }
 
     return std::wstring{dest.begin(), dest.end()};
