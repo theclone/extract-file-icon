@@ -24,20 +24,15 @@
     "rebuild": "node-gyp rebuild",
     "build": "tsc -p .",
     "watch": "tsc --watch -p .",
-    "prepublishOnly": "npm run build && npm run rebuild"
+    "prepare": "npm run build"
   },
   "dependencies": {
-    "node-addon-api": "1.7.1"
+    "node-addon-api": "8.3.1"
   },
   "devDependencies": {
     "@types/node": "12.12.9",
-    "node-gyp": "6.0.1",
+    "node-gyp": "^10.2.0",
     "tslint": "5.20.1",
     "typescript": "3.7.2"
-  },
-  "files": [
-    "lib/",
-    "dist/",
-    "binding.gyp"
-  ]
+  }
 }
